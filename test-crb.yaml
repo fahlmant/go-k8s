@@ -1,0 +1,14 @@
+kind: ClusterRoleBinding
+groupNames: null
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: test-crb
+subjects:
+- kind: ServiceAccount
+  name: test-sa
+  namespace: testing-123
+roleRef:
+- kind: ClusterRole
+  name: test-cr
+userNames:
+- system:serviceaccount:testing-123:test-sa
