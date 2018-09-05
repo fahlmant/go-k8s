@@ -16,7 +16,9 @@ import (
 	"k8s.io/client-go/kubernetes/scheme"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/util/homedir"
+    //monitorv1 "github.com/coreos/prometheus-operator/pkg/client/monitoring/v1"
 	//"github.com/hashicorp/vault/api"
+    goapi "../../pkg/api"
 )
 
 var clusterFlag = flag.String("cluster", "", "Specify the name of the cluster")
@@ -65,8 +67,7 @@ func main() {
 	obj, _, err := decode([]byte(yamlFile), nil, nil)
 	checkErr(err)
 
-	//
-	switch o := obj.(type) {
+    switch o := obj.(type) {
 	case *apiv1.Namespace:
 		fmt.Println("Creating namespace...")
 		_, err = clientset.CoreV1().Namespaces().Create(o)
@@ -84,6 +85,8 @@ func main() {
 		fmt.Println("Creating ClusterRoleBinding...")
 		_, err = clientset.RbacV1().ClusterRoleBindings().Create(o)
 		checkErr(err)
+    case *goapi.Prometheus:
+        fmt.Println("Foo")
 	default:
 		fmt.Println("K8s object not currently handled")
 		fmt.Println(reflect.TypeOf(o))

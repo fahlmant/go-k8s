@@ -1,5 +1,5 @@
-hash: 3a52d076ee325b76104d76a0ae20254d5c47f34de44b4d1711aba263228415aa
-updated: 2018-08-20T09:22:00.428628238-04:00
+hash: 517f8c65a076fc857767f27e2fa1a60c5a8d924a2d2a798b82fc40ade0d7a188
+updated: 2018-09-05T14:50:22.685312367-04:00
 imports:
 - name: github.com/ghodss/yaml
   version: 73d445a93680fa1a78ae23a5839bad48f32ba1ee
@@ -11,7 +11,7 @@ imports:
 - name: github.com/golang/glog
   version: 44145f04b68cf362d9c4df2182967c2275eaefed
 - name: github.com/golang/protobuf
-  version: b4deda0973fb4c70b50d226b1af49f3da59f5265
+  version: 1643683e1b54a9e88ad26d98f81400c8c9d9f4f9
   subpackages:
   - proto
   - ptypes
@@ -46,13 +46,10 @@ imports:
   version: 1c05540f6879653db88113bc4a2b70aec4bd491f
   subpackages:
   - context
-  - html
-  - html/atom
   - http2
   - http2/hpack
   - idna
   - lex/httplex
-  - websocket
 - name: golang.org/x/sys
   version: 95c6576299259db960f6c5b9b69ea52422860fce
   subpackages:
@@ -94,6 +91,7 @@ imports:
   - core/v1
   - events/v1beta1
   - extensions/v1beta1
+  - imagepolicy/v1alpha1
   - networking/v1
   - policy/v1beta1
   - rbac/v1
@@ -194,4 +192,6 @@ imports:
   - util/flowcontrol
   - util/homedir
   - util/integer
+- name: k8s.io/code-generator
+  version: aae79feb89bdded3679da91fd8c19b6dfcbdb79a
 testImports: []

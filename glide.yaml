@@ -2,3 +2,4 @@ package: github.com/fahlmant/go-k8s
 import:
 - package: k8s.io/client-go
   version: kubernetes-1.10.6
+- package: k8s.io/code-generator
